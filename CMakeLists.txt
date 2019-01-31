@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 2.6.0)
 project (collada-dom)
 set( CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE )
-set( CMAKE_CXX_STANDARD 98 )
 
 # Define here the needed parameters
 set (COLLADA_DOM_VERSION_MAJOR 2)
@@ -116,7 +115,7 @@ if( MSVC )
   set(Boost_USE_STATIC_RUNTIME OFF)
   set(Boost_CFLAGS "-DBOOST_ALL_DYN_LINK -DBOOST_ALL_NO_LIB")
 endif()
-
+  
 set(Boost_ADDITIONAL_VERSIONS "1.46" "1.45" "1.44" "1.43" "1.42" "1.41" "1.40" "1.39" "1.38" "1.37.0" "1.37" "1.35.0" "1.34.1" "1.34.0" "1.34" "1.33.1" "1.33.0" "1.33")
 
 if( NOT $ENV{BOOST_INCLUDEDIR} STREQUAL "" )
@@ -268,7 +267,7 @@ if(CMAKE_CPACK_COMMAND AND UNIX AND OPT_BUILD_PACKAGES)
   set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/dom/license.txt)
 
   set(CPACK_COMPONENT_${COMPONENT_PREFIX_UPPER}DOM-DEV_DISPLAY_NAME "common headers and installs")
-
+  
   set(CPACK_DEBIAN_BUILD_DEPENDS debhelper cmake libxml2-dev libboost-dev libpcre3-dev zlib1g-dev libboost-filesystem-dev libboost-system-dev libpcre3-dev pkg-config)
 
   # debian
